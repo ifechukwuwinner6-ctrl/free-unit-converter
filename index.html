@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTools - Free Online Multi-Converter</title>
+    <style>
+        /* Modern, Clean Design to Keep Users Engaged */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem 0;
+        }
+
+        /* Placeholder Styles for Your Ads */
+        .ad-banner {
+            background-color: #e2e8f0;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .tool-card h2 {
+            margin-top: 0;
+            color: #1e293b;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input, select {
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .result-box {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🛠️ SmartTools Hub</h1>
+        <p>Fast, Free, and Accurate Online Converters</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- TOP AD PLACEMENT -->
+        <div class="ad-banner">
+            <p>▼ Advertisement ▼</p>
+            <!-- When you get approved for Google AdSense or Adsterra, paste your ad script code right here -->
+            <small>Ad Code Placeholder (Banner 728x90)</small>
+        </div>
+
+        <!-- TOOL 1: Length Converter -->
+        <div class="tool-card">
+            <h2>Length Converter</h2>
+            <div class="input-group">
+                <label for="lengthInput">Enter Value:</label>
+                <input type="number" id="lengthInput" placeholder="e.g., 10" oninput="convertLength()">
+            </div>
+            <div class="input-group">
+                <label for="lengthFrom">From:</label>
+                <select id="lengthFrom" onchange="convertLength()">
+                    <option value="meters">Meters (m)</option>
+                    <option value="feet">Feet (ft)</option>
+                    <option value="inches">Inches (in)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="lengthTo">To:</label>
+                <select id="lengthTo" onchange="convertLength()">
+                    <option value="feet">Feet (ft)</option>
+                    <option value="meters">Meters (m)</option>
+                    <option value="inches">Inches (in)</option>
+                </select>
+            </div>
+            <div class="result-box" id="lengthResult">
+                Result will appear here
+            </div>
+        </div>
+
+        <!-- MIDDLE AD PLACEMENT -->
+        <div class="ad-banner">
+            <p>▼ Advertisement ▼</p>
+            <small>Ad Code Placeholder (In-Article Ad)</small>
+        </div>
+
+        <!-- TOOL 2: Weight Converter -->
+        <div class="tool-card">
+            <h2>Weight Converter</h2>
+            <div class="input-group">
+                <label for="weightInput">Enter Value:</label>
+                <input type="number" id="weightInput" placeholder="e.g., 5" oninput="convertWeight()">
+            </div>
+            <div class="input-group">
+                <label for="weightFrom">From:</label>
+                <select id="weightFrom" onchange="convertWeight()">
+                    <option value="kilograms">Kilograms (kg)</option>
+                    <option value="pounds">Pounds (lbs)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="weightTo">To:</label>
+                <select id="weightTo" onchange="convertWeight()">
+                    <option value="pounds">Pounds (lbs)</option>
+                    <option value="kilograms">Kilograms (kg)</option>
+                </select>
+            </div>
+            <div class="result-box" id="weightResult">
+                Result will appear here
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SmartTools Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Logic for Length Conversion
+        function convertLength() {
+            const val = parseFloat(document.getElementById('lengthInput').value);
+            const from = document.getElementById('lengthFrom').value;
+            const to = document.getElementById('lengthTo').value;
+            const resultBox = document.getElementById('lengthResult');
+
+            if (isNaN(val)) {
+                resultBox.innerText = "Please enter a valid number";
+                return;
+            }
+
+            // Convert everything to meters first
+            let meters = val;
+            if (from === 'feet') meters = val * 0.3048;
+            if (from === 'inches') meters = val * 0.0254;
+
+            // Convert from meters to target
+            let result = meters;
+            if (to === 'feet') result = meters / 0.3048;
+            if (to === 'inches') result = meters / 0.0254;
+
+            resultBox.innerText = `${val} ${from} = ${result.toFixed(4)} ${to}`;
+        }
+
+        // Logic for Weight Conversion
+        function convertWeight() {
+            const val = parseFloat(document.getElementById('weightInput').value);
+            const from = document.getElementById('weightFrom').value;
+            const to = document.getElementById('weightTo').value;
+            const resultBox = document.getElementById('weightResult');
+
+            if (isNaN(val)) {
+                resultBox.innerText = "Please enter a valid number";
+                return;
+            }
+
+            let result = val;
+            if (from === 'kilograms' && to === 'pounds') result = val * 2.20462;
+            if (from === 'pounds' && to === 'kilograms') result = val / 2.20462;
+
+            resultBox.innerText = `${val} ${from} = ${result.toFixed(4)} ${to}`;
+        }
+    </script>
+</body>
+</html>
